@@ -14,10 +14,13 @@ import NewsUploadWrapper from './NewUploadWrapper';
 import { plainText } from '@/lib';
 
 const FeaturedNews = async () => {
-  const news = await fetch(`http://localhost:3000/api/news/feature`, {
-    method: 'POST',
-    cache: 'no-store',
-  })
+  const news = await fetch(
+    `https://north-bengal-college-lilac.vercel.app/api/news/feature`,
+    {
+      method: 'POST',
+      cache: 'no-store',
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       if (data.error) {

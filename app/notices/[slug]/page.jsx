@@ -8,7 +8,9 @@ import { Card } from '@/components/ui/card';
 import Link from 'next/link';
 
 const NoticesPage = async ({ params }) => {
-  const notice = await fetch(`http://localhost:3000/api/notice/${params.slug}`)
+  const notice = await fetch(
+    `https://north-bengal-college-lilac.vercel.app/api/notice/${params.slug}`
+  )
     .then((res) => res.json())
     .then((data) => {
       if (data.error) {

@@ -14,7 +14,9 @@ import Link from 'next/link';
 
 const LatestNews = async ({ category, query }) => {
   const _latestNews = await fetch(
-    `http://localhost:3000/api/news/latest/${category}/${query || 'null'}`
+    `https://north-bengal-college-lilac.vercel.app/api/news/latest/${category}/${
+      query || 'null'
+    }`
   )
     .then((res) => res.json())
     .then((data) => {

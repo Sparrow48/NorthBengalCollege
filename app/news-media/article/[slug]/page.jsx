@@ -22,9 +22,12 @@ const NewsArticle = async ({ params }) => {
   const headersList = await headers();
   const { slug } = await params;
 
-  const news = await fetch(`http://localhost:3000/api/news/${slug}`, {
-    headers: new Headers(headersList),
-  })
+  const news = await fetch(
+    `https://north-bengal-college-lilac.vercel.app/api/news/${slug}`,
+    {
+      headers: new Headers(headersList),
+    }
+  )
     .then((res) => res.json())
     .catch((err) => console.error(err));
 

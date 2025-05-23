@@ -21,7 +21,7 @@ const NoticesPage = async ({ searchParams }) => {
   if (search) queryParams.set('search', search);
 
   const notices = await fetch(
-    `http://localhost:3000/api/notice/all??${queryParams.toString()}`,
+    `https://north-bengal-college-lilac.vercel.app/api/notice/all??${queryParams.toString()}`,
     {
       headers: new Headers(headersList),
     }

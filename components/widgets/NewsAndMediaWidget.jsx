@@ -6,7 +6,7 @@ import { Calendar } from 'lucide-react';
 
 const NewsAndMediaWidget = async ({ departmentSlug }) => {
   const _latestNews = await fetch(
-    `http://localhost:3000/api/news/latest-five?department=${departmentSlug}`
+    `https://north-bengal-college-lilac.vercel.app/api/news/latest-five?department=${departmentSlug}`
   )
     .then((res) => res.json())
     .then((data) => {

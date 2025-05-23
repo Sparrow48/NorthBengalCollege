@@ -7,9 +7,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const NewsAndMediaSection = async () => {
-  const res = await fetch('http://localhost:3000/api/news/latest-five', {
-    cache: 'no-store',
-  });
+  const res = await fetch(
+    'https://north-bengal-college-lilac.vercel.app/api/news/latest-five',
+    {
+      cache: 'no-store',
+    }
+  );
   const data = await res.json();
   const news = data.data;
   const [firstNews, ...restNews] = news || [];

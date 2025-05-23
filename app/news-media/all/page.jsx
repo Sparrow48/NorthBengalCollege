@@ -23,9 +23,12 @@ const NewsList = async ({ searchParams }) => {
   const { page = '1' } = await searchParams;
   const headersList = await headers();
   const session = await getServerSession(authOptions);
-  const news = await fetch(`http://localhost:3000/api/news/all/${page}`, {
-    headers: new Headers(headersList),
-  })
+  const news = await fetch(
+    `https://north-bengal-college-lilac.vercel.app/api/news/all/${page}`,
+    {
+      headers: new Headers(headersList),
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       if (data.error) {

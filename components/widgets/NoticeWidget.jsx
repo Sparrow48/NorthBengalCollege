@@ -5,7 +5,7 @@ import { Calendar } from 'lucide-react';
 
 const NoticeWidget = async ({ departmentSlug }) => {
   const res = await fetch(
-    `http://localhost:3000/api/notice/latest?department=${departmentSlug}`,
+    `https://north-bengal-college-lilac.vercel.app/api/notice/latest?department=${departmentSlug}`,
     {
       cache: 'no-store',
     }

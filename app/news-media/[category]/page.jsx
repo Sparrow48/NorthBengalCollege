@@ -21,7 +21,7 @@ const CategoryNewsList = async ({ params, searchParams }) => {
   const { page = '1' } = await searchParams;
 
   const news = await fetch(
-    `http://localhost:3000/api/news/category/${category}/${page}`,
+    `https://north-bengal-college-lilac.vercel.app/api/news/category/${category}/${page}`,
     {
       method: 'GET',
     }

@@ -5,9 +5,12 @@ import SectionHeader from '@/components/common/SectionHeader';
 import { NOTICES } from '@/data/notices';
 
 const NoticeSection = async () => {
-  const res = await fetch('http://localhost:3000/api/notice/latest', {
-    cache: 'no-store',
-  });
+  const res = await fetch(
+    'https://north-bengal-college-lilac.vercel.app/api/notice/latest',
+    {
+      cache: 'no-store',
+    }
+  );
   const data = await res.json();
   const notices = data.data;
   return (
