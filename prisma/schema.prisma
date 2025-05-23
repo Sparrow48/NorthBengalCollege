@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String?   // Hashed password for credentials
+  name      String?
+  articles  Article[]
+  notices   Notice[]
+}
+
+model Article {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  content     String
+  imageUrl    String  
+  imageAlt    String
+  type        String
+  department  String[]
+  isFeatured  Boolean    @default(false)
+  isPublished Boolean    @default(false)
+  authorId    Int
+  author      User     @relation(fields: [authorId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Notice {
+  id         Int      @id @default(autoincrement())
+  title      String
+  slug       String   @unique
+  fileUrl    String   
+  department String[]
+  isPublished Boolean    @default(false)
+  authorId   Int
+  author     User     @relation(fields: [authorId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
