@@ -24,13 +24,15 @@ const NewsAndMediaSection = async () => {
         <Card className="border-none shadow-none">
           <CardContent className="p-0">
             <div className="space-y-4">
-              <Image
-                src={firstNews?.imageUrl}
-                alt={firstNews?.imageAlt}
-                width={600}
-                height={400}
-                className="w-full rounded-lg"
-              />
+              {firstNews && (
+                <Image
+                  src={firstNews?.imageUrl}
+                  alt={firstNews?.imageAlt}
+                  width={600}
+                  height={400}
+                  className="w-full rounded-lg"
+                />
+              )}
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <CalendarDays className="w-4 h-4" />
